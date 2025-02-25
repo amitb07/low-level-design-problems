@@ -15,7 +15,11 @@ class ParkingLevel {
     boolean isAvailable() {
         return availableSpots.size() > 0;
     }
-
+    
+    int getNumberOfAvailableSpots() {
+        return availableSpots.size();
+    }
+    
     boolean parkVehicle(Vehicle vehicle) {
         if(availableSpots.size() > 0) {
             ParkingSpot freeSpot = availableSpots.get(0);

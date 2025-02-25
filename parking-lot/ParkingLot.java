@@ -7,7 +7,7 @@ class ParkingLot {
     void addLevel(int totalSpots, int levelNumber) {
         levels.add(new ParkingLevel(totalSpots, levelNumber));
     }
-    
+
     boolean parkVehicle(Vehicle vehicle) {
         for(ParkingLevel l: this.levels) {
             if(l.isAvailable()) {
@@ -16,5 +16,11 @@ class ParkingLot {
             }
         }
         return false;
+    }
+
+    void displayAvailability() {
+        for(ParkingLevel l: this.levels) {
+            System.out.println("Level "+l.levelNumber+" Number of available spots: "+l.getNumberOfAvailableSpots());
+        }
     }
 }
